@@ -1,0 +1,31 @@
+//normal order 1 to end printing program using recursion
+#include<stdio.h>
+void print(int,int);
+
+void main(){
+    int end;
+    scanf("%d",&end);
+    print(1,end);
+}
+void print(int current,int end){
+    if(current <= end){
+        printf("%d ",current);//current=1 intially,1<=end,1+1=2 then continuos till the end
+        print(current+1,end);
+    }
+}
+
+//reverse order end to 1 using recursion
+#include<stdio.h>
+void print(int);
+
+void main(){
+    int end;
+    scanf("%d",&end);
+    print(end);
+}
+void print(int current){
+    if(current >= 1){
+        printf("%d ",current);//current=1 intially,1<=end,1+1=2->current then continuos till the end
+        print(current-1);
+    }
+}
