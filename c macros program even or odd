@@ -1,0 +1,14 @@
+//even-or-odd-using-object-like-macros-in-c
+#include <stdio.h>
+#include <string.h>
+#define result(num) (num %2 == 0) ? "even" : "odd")
+int main()
+{
+    int num;
+    char result[10]; 
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    strcpy(result, (num %2 == 0) ? "even" : "odd");
+    printf("The number is %s", result);
+    return 0;
+}
