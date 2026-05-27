@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main() {
+    float basic_salary, total_salary, house_allowance, leave_allowance;
+    scanf("%f", &basic_salary);
+
+    // Calculate allowances and total salary based on basic salary ranges
+    if (basic_salary >= 10000 && basic_salary <= 15000) {
+        house_allowance = 0.15 * basic_salary;
+        leave_allowance = 0.20 * basic_salary;
+    } else if (basic_salary > 15000 && basic_salary <= 50000) {
+        house_allowance = 0.30 * basic_salary;
+        leave_allowance = 0.35 * basic_salary;
+    } else if (basic_salary > 50000) { 
+        house_allowance = 0.30 * basic_salary; 
+        leave_allowance = 0.45 * basic_salary;
+    } else {
+        printf("Invalid basic salary entered.\n");
+        return 0;
+    }
+    total_salary = basic_salary + house_allowance + leave_allowance;
+    printf("Basic Salary: %.2f\n", basic_salary);
+    printf("House Allowance: %.2f\n", house_allowance);
+    printf("Leave Allowance: %.2f\n", leave_allowance);
+    printf("Total Salary: %.2f\n", total_salary);
+
+    return 0;
+}
