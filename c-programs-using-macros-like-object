@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define length 10 //using object-like macros
+#define breath 8
+#define nam "cat" //define is called as directive
+#define op(a,b) (a*b) //product Operation performing
+int main()
+{
+ int area=length * breath;
+ int sqrarea= length *length;
+
+//product operation
+ int x,y;
+ printf("enter X & Y\n");
+ scanf("%d %d",&x,&y);
+ int pro = op(x,y);
+ printf("product is:%d\n",pro);
+
+//prints for macros-defining for area and string functions
+ printf("the area of the rectangle is %d\n",area);
+ printf("the area of square is %d\n",sqrarea);
+ printf("the %s is under the table",nam);
+ return 0;
+}
