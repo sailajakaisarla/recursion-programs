@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    char ch;
+    scanf("%c", &ch);
+    switch(ch)
+    {
+        case 'a' ... 'z': printf("lower"); break;
+        case 'A' ... 'Z': printf("Upper"); break;  
+        case '0' ... '9': printf("Digit"); break; 
+        default: printf("Symbol"); break;
+    }
+    return 0;
+}
