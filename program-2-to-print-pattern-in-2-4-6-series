@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+ int n;
+ scanf("%d",&n);
+ for(int i=n;i>=1;i--){
+    for(int spaces=i+1;spaces<=n;spaces++){  //i be the row and j be the col
+         printf(" ");
+      }
+       for(int j=1;j<=2*i;j++){  
+         printf(" * "); //since the each row has stars series of 2,4,6,8... then just twice the row is required
+ }
+ printf("\n");
+ }
+ return 0;
