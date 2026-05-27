@@ -1,0 +1,55 @@
+//circular-prime-or-not-program
+if each and every rotation of a number id prime then it is called as circular prime
+
+#include<stdio.h>
+#include<math.h>
+
+int scan();
+int largest_10_power(int);//fun defination
+int l_rotate(int);
+int is_prime(int);
+int circular_prime(int);
+
+int main(){
+    int result =circular_prime(scan());//fun 
+    printf(result ? "circular" : "non-circular");
+}
+
+int circular_prime(int num){
+    int nod = log10(num) + 1;
+    for(int itr=1;itr<=num;itr++){
+        if(is_prime(num)) num = l_rotate(num);
+        else return 0;
+    }
+    return 1;
+}
+int is_prime(int num){
+    if(num<=1) return 0;
+    if(num%2==0) return num==2;
+    for(int itr=3;itr<=sqrt(num);itr+=2){
+        if(num%itr==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+int l_rotate(int num){
+    int den=largest_10_power(num); //fun declaration 
+    int left=num/den;
+    int right=num%den;     //1234/1000=1,1234%1000=234 so,for rotation 234*10+1=2341
+    int new_num=right*10 + left;
+    return new_num;
+}
+int largest_10_power(int num){
+    int den=1;
+    while((num/den)>9){
+        den *= 10;
+    }
+    return den;
+ }
+int scan(){
+    int num;
+    scanf("%d",&num);
+    return num;
+}
+
